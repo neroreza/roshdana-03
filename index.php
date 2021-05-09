@@ -36,5 +36,7 @@
     ?>
 </table>
 
+<a href="add.php">add a new student</a>
+
 </body>
 </html>
