@@ -1,12 +1,6 @@
 <?php
-    $db = new mysqli('localhost' , 'root' , '' , 'univercity');
-
-    $query = "SELECT * FROM student";
-    $result = $db->query($query);
-
-    $students = $result->fetch_all(MYSQLI_ASSOC);
-
-
+    require 'include/init.php';
+    $students = listStudent();
 ?><!doctype html>
 <html lang="en">
 <head>

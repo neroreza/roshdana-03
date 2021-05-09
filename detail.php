@@ -1,12 +1,8 @@
 <?php
-    $db = new mysqli('localhost' , 'root' , '' , 'univercity');
+    require 'include/init.php';
 
     $id = $_GET['id'];
-    $query = "SELECT id , firstname , lastname , major FROM student WHERE id=$id";
-    $result = $db->query($query);
-
-    $student = $result->fetch_assoc();
-
+    $student = getStudent($id);
 ?><!doctype html>
 <html lang="en">
 <head>

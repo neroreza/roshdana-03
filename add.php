@@ -1,17 +1,13 @@
 <?php
-    $db = new mysqli('localhost' , 'root' , '' , 'univercity');
+    require 'include/init.php';
 
-
-
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(isPostMethod()){
         $firstname = $_REQUEST['firstname'];
         $lastname = $_REQUEST['lastname'];
         $major = $_REQUEST['major'];
-        $query = "INSERT INTO student SET firstname='$firstname' , lastname='$lastname' , major='$major' ";
-        $result = $db->query($query);
+        $result = addStudent($firstname,$lastname,$major);
+        redirectToUrl('index.php');
     }
-
-
 ?><!doctype html>
 <html lang="en">
 <head>

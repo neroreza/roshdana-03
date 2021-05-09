@@ -1,19 +1,15 @@
 <?php
-    $db = new mysqli('localhost' , 'root' , '' , 'univercity');
+    require 'include/init.php';
 
     $id = $_GET['id'];
-
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(isPostMethod()){
         $firstname = $_REQUEST['firstname'];
         $lastname = $_REQUEST['lastname'];
         $major = $_REQUEST['major'];
-        $query = "UPDATE student SET firstname='$firstname' , lastname='$lastname' , major='$major' where id='$id' ";
-        $result = $db->query($query);
+        updateStudent($id , $firstname , $lastname , $major);
+        redirectToUrl('index.php');
     }
-
-    $query = "SELECT id , firstname , lastname , major FROM student WHERE id=$id";
-    $result = $db->query($query);
-    $user = $result->fetch_assoc();
+    $user = getStudent($id);
 ?><!doctype html>
 <html lang="en">
 <head>

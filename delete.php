@@ -1,10 +1,7 @@
 <?php
-    $db = new mysqli('localhost' , 'root' , '' , 'univercity');
+    require 'include/init.php';
 
     $id = $_GET['id'];
-    $query = "DELETE FROM student WHERE id='$id'";
-    $db->query($query);
-
-    header("location: index.php");
-    exit();
+    deleteStudent($id);
+    redirectToUrl('index.php');
 ?>
