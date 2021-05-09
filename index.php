@@ -30,8 +30,8 @@
         echo "<tr>
                 <td>$counter</td>
                 <td><a href='detail.php?id=$student[id]'>$student[firstname] $student[lastname]</a>
-                <a href='delete.php?id=$student[id]' style='color:red;'>X</a>
-                <a href='delete.php?id=$student[id]' style='color:green;'>+</a>
+                <a onclick='return confirm(\" are you sure ? \");' href='delete.php?id=$student[id]' style='color:red;'>X</a>
+                <a href='update.php?id=$student[id]' style='color:green;'>+</a>
                 </td>
               </tr>";
     }
