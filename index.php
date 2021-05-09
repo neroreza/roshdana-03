@@ -29,7 +29,10 @@
         $counter+=1;
         echo "<tr>
                 <td>$counter</td>
-                <td><a href='detail.php?id=$student[id]'>$student[firstname] $student[lastname]</a></td>
+                <td><a href='detail.php?id=$student[id]'>$student[firstname] $student[lastname]</a>
+                <a href='delete.php?id=$student[id]' style='color:red;'>X</a>
+                <a href='delete.php?id=$student[id]' style='color:green;'>+</a>
+                </td>
               </tr>";
     }
 
